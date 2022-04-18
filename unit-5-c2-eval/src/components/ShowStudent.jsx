@@ -6,7 +6,14 @@ function ShowStudent({data, setData}){
     const [text, setText] = useState("");
 
     return (
+
         <div className="container">
+
+           <select name="sortbyname" id="">
+               <option value="first_name">First Name</option>
+           </select>
+
+
             <table border="1">
 
                 <thead>

@@ -16,7 +16,7 @@ export function AddStudent({toggleDisplay}) {
     })
 
     function handleChange(e) {
-        let {value, className} = e.target;
+        let {value, className, checked} = e.target;
         
         setFormData({...formData, [className]:value})
     }
@@ -43,7 +43,14 @@ export function AddStudent({toggleDisplay}) {
           <input onChange={handleChange} value={formData.email} className="email" type="text"  required />
           <br />
           <label>Gender</label>
-          <input onChange={handleChange} value={formData.gender} className="gender" type="text"  required />
+
+          <label>Male</label>
+          <input onChange={handleChange} value={formData.gender} className="gender" type="checkbox" checked={"male"}  required />
+          <label>Female</label>
+
+          <input onChange={handleChange} value={formData.gender} className="gender" type="checkbox" checked={"female"}  required />
+
+
           <br />
           <label>Age</label>
           <input onChange={handleChange} value={formData.age} className="age" type="text"  required />
@@ -56,7 +63,7 @@ export function AddStudent({toggleDisplay}) {
           <input onChange={handleChange} value={formData.twelth_score} className="twelth_score" type="text"/>
           <br />
           <label>Preferred Barnch</label>
-          <input onChange={handleChange} value={formData.preferred_branch} type="text" className="preferred_branch"  required />
+          <input onChange={handleChange} value={formData.preferred_branch} type="select" className="preferred_branch"  required />
 
          
           <input className="submitBtn" type="submit"/>
